@@ -3,7 +3,7 @@ import useData from "./useData";
 import "./Table.css";
 
 export default function Table() {
-    const { data, loading, error } = useData();
+    const { data, loading } = useData();
     const [currentPage, setCurrentPage] = useState(1);
     const [gotoPage, setGotoPage] = useState("");
     const [darkMode, setDarkMode] = useState(false);
@@ -16,7 +16,7 @@ export default function Table() {
     }, [darkMode]);
 
     useEffect(() => {
-        const handleKeyDown = (event) => {
+        const handleKeyDown = (event: { key: string; }) => {
             console.log(event.key);
             if(event.key === '∂'){
                 setDarkMode(true);
