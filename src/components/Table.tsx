@@ -45,7 +45,6 @@ export default function Table() {
     const startIndex = (currentPage - 1) * recordsPerPage;
     const paginatedData = data ? data.slice(startIndex, startIndex + recordsPerPage) : [];
 
-    // Ensure 5 rows per page by filling with empty rows
     const filledData = [...paginatedData];
     while (filledData.length < recordsPerPage) {
         filledData.push({});
@@ -53,7 +52,7 @@ export default function Table() {
 
     return (
         <div className="table-container">
-            {/* Header Section */}
+        
             <div className="header">
                 <h1>Kickstarter Project Stats</h1>
                 <button className="mode-toggle" onClick={() => setDarkMode(!darkMode)}>
@@ -89,7 +88,6 @@ export default function Table() {
                 </tbody>
             </table>
 
-            {/* Pagination Controls */}
             <div className="pagination">
                 <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
                     Prev
@@ -100,7 +98,6 @@ export default function Table() {
                 </button>
             </div>
 
-            {/* Go to Page Input */}
             <div className="goto-page">
                 <label htmlFor="page-input">Go to page:</label>
                 <input
