@@ -1,0 +1,171 @@
+/* General Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Dark Mode Toggle */
+.mode-toggle {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.mode-toggle:hover {
+    background-color: #0056b3;
+}
+
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .project-table {
+    background: #2c2c2c;
+}
+
+.project-table th, 
+.project-table td {
+    text-align: left;
+    padding: 12px 16px;
+}
+
+.project-table th {
+    background: #2D74F0;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+.dark-mode .project-table th {
+    background: #444;
+}
+
+.project-table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+.dark-mode .project-table tbody tr {
+    border-bottom: 1px solid #444;
+}
+
+/* Loading Skeleton */
+.skeleton-row td {
+    height: 18px;
+    background: #eee;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton-row td::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+.dark-mode .skeleton-row td {
+    background: #444;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #2D74F0;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Go to Page */
+.goto-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.goto-page input {
+    width: 60px;
+    padding: 5px;
+    border: 1px none #ccc;
+    text-align: center;
+}
+
+.goto-page button {
+    background-color: #2D74F0;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.dark-mode .goto-page input {
+    
+    background: #444;
+    color: rgb(39, 36, 36);
+}
